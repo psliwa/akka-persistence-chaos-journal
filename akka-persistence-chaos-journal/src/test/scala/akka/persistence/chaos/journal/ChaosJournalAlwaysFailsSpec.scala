@@ -6,7 +6,7 @@ import akka.persistence.{AtomicWrite, _}
 
 import scala.collection.immutable
 
-class ChaosJournalAlwaysFailedSpec extends TestSpec("application-1-failure-rate.conf") {
+class ChaosJournalAlwaysFailsSpec extends TestSpec("application-1-failure-rate.conf") {
 
   val writeJournal: ActorRef = Persistence(system).journalFor("akka.persistence.chaos.journal")
 

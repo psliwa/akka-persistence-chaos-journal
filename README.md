@@ -6,10 +6,16 @@ It is a plugin for akka-persistence that stores messages in memory with configur
 Installation
 ============
 
-The plugin is not yet released, it will be soon available in central maven repository.
+```
+libraryDependencies += "org.psliwa" %% "akka-persistence-chaos-journal" % "2.5.1.1.0"
+```
 
-Configuration
-=============
+How to use?
+===========
+
+The exemplary project with the usage of the plugin for tests is [here][3].
+
+Add in yours `application.conf`:
 
 ```
 akka.persistence {
@@ -19,8 +25,9 @@ akka.persistence {
 }
 ```
 
-Configuration details you can find in [reference.conf][2]
+Configuration details you can find in [reference.conf][2].
 
 [1]: https://github.com/dnvriend/akka-persistence-inmemory
-[2]: src/main/resources/reference.conf
+[2]: akka-persistence-chaos-journal/src/main/resources/reference.conf
+[3]: example/
 
