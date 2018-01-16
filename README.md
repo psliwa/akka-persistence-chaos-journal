@@ -1,4 +1,4 @@
-akka-persistence-chaos-journal
+akka-persistence-chaos-journal [![Build Status](https://travis-ci.org/psliwa/akka-persistence-chaos-journal.svg?branch=master)](https://travis-ci.org/psliwa/akka-persistence-chaos-journal)
 ==============================
 
 It is a plugin for akka-persistence that stores messages in memory with configurable failure rate. In may be used in persistence fault tolerance tests. The plugin is written on the top of [akka-persistence-inmemory][1].
