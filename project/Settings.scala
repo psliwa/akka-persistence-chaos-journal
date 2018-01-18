@@ -1,3 +1,4 @@
+import com.typesafe.sbt.pgp.PgpKeys._
 import sbt._
 import sbt.Keys._
 
@@ -21,6 +22,9 @@ object Settings {
       browseUrl = url("https://github.com/psliwa/akka-persistence-chaos-journal"),
       connection = "scm:git:git@github.com:psliwa/akka-persistence-chaos-journal.git"
     )),
+    homepage := Some(url("https://github.com/psliwa/akka-persistence-chaos-journal")),
+    organizationHomepage := Some(url("https://github.com/psliwa")),
+    useGpg := true,
     pomExtra := <xml:group>
       <developers>
         <developer>

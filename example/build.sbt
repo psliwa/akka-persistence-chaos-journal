@@ -1,3 +1,4 @@
+import com.typesafe.sbt.pgp.PgpKeys.{publishLocalSigned, publishSigned}
 import sbt.Keys.version
 
 // It is an alias for running tests with ChaosJournal as persistent journal.
@@ -13,12 +14,15 @@ val example = (project in file("."))
     version := Versions.pluginFullVersion,
 
 //    For testing staging releases
-//    resolvers += "Sonatype OSS Staging" at "https://oss.sonatype.org/service/local/repositories/orgpsliwa-1000/content",
+//    resolvers += "Sonatype OSS Staging" at "https://oss.sonatype.org/service/local/repositories/orgpsliwa-1003/content",
     resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
 
     fork in Test := true,
 
     publish := {},
+    publishLocal := {},
+    publishLocalSigned := {},
+    publishSigned := {},
 
     libraryDependencies := Seq(
       "org.psliwa" %% "akka-persistence-chaos-journal" % Versions.pluginFullVersion,
