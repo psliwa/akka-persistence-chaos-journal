@@ -2,7 +2,7 @@ package org.psliwa.akka.persistence.chaos.journal.example
 
 import akka.actor.{Actor, Props}
 import akka.pattern.{Backoff, BackoffSupervisor}
-import akka.persistence.AtLeastOnceDelivery
+import akka.persistence.{AtLeastOnceDelivery, Recovery}
 import org.psliwa.akka.persistence.chaos.journal.example.Messages.Protocol.{GetMessage, SaveMessage}
 import org.psliwa.akka.persistence.chaos.journal.example.MessagesDeliveryGuarantee.{DeliveryConfirmation, DeliveryWrapper}
 
@@ -28,6 +28,8 @@ class MessagesDeliveryGuarantee extends AtLeastOnceDelivery {
   )
 
   override def receiveRecover: Receive = Actor.emptyBehavior
+
+  override def recovery: Recovery = Recovery.none
 
   override def receiveCommand: Receive = {
     case msg: SaveMessage =>
